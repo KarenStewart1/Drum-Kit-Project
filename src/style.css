@@ -1,12 +1,24 @@
 body {
   background-image: url("image/background.jpg");
+  background-size: cover;
 }
 .drums {
   text-align: center;
-  margin-top: 400px;
+  margin-top: 650px;
 }
 button {
-  border: solid 2px black;
+  border: solid 4px black;
   color: white;
-  font-family: 'Courier Prime', monospace;;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 30px;
+  font-family: "Courier Prime", monospace;
+  width: 100px;
+  height: 80px;
+  padding-top: 5px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.sound {
+  font-size: 15px;
+  color: #b69f43;
 }
