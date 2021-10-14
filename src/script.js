@@ -1,6 +1,4 @@
-let drumButtons = document.querySelectorAll("button");
-
-drumButtons.forEach(function (button) {
+document.querySelectorAll("button").forEach(function (button) {
   button.addEventListener("click", function () {
     button.classList.add("active-button");
     setTimeout(function () {
@@ -8,49 +6,53 @@ drumButtons.forEach(function (button) {
     }, 50);
   });
 });
-
-let buttonA = document.querySelector("#a-button");
-buttonA.addEventListener("click", function () {
-  let music = new Audio("sounds/clap.wav");
-  music.play();
+document.querySelector("#a-button").addEventListener("click", function () {
+  playMusic("clap");
 });
-let buttonS = document.querySelector("#s-button");
-buttonS.addEventListener("click", function () {
-  let music = new Audio("sounds/hihat.wav");
-  music.play();
+document.querySelector("#s-button").addEventListener("click", function () {
+  playMusic("hihat");
 });
-let buttonD = document.querySelector("#d-button");
-buttonD.addEventListener("click", function () {
-  let music = new Audio("sounds/kick.wav");
-  music.play();
+document.querySelector("#d-button").addEventListener("click", function () {
+  playMusic("kick");
 });
-let buttonF = document.querySelector("#f-button");
-buttonF.addEventListener("click", function () {
+document.querySelector("#f-button").addEventListener("click", function () {
   let music = new Audio("sounds/openhat.wav");
-  music.play();
+  playMusic("kick");
 });
-let buttonG = document.querySelector("#g-button");
-buttonG.addEventListener("click", function () {
-  let music = new Audio("sounds/boom.wav");
-  music.play();
+document.querySelector("#g-button").addEventListener("click", function () {
+  playMusic("openhat");
 });
-let buttonH = document.querySelector("#h-button");
-buttonH.addEventListener("click", function () {
-  let music = new Audio("sounds/ride.wav");
-  music.play();
+document.querySelector("#h-button").addEventListener("click", function () {
+  playMusic("ride");
 });
-let buttonJ = document.querySelector("#j-button");
-buttonJ.addEventListener("click", function () {
-  let music = new Audio("sounds/snare.wav");
-  music.play();
+document.querySelector("#j-button").addEventListener("click", function () {
+  playMusic("snare");
 });
-let buttonK = document.querySelector("#k-button");
-buttonK.addEventListener("click", function () {
-  let music = new Audio("sounds/tom.wav");
-  music.play();
+document.querySelector("#k-button").addEventListener("click", function () {
+  playMusic("tom");
 });
-let buttonL = document.querySelector("#l-button");
-buttonL.addEventListener("click", function () {
-  let music = new Audio("sounds/tink.wav");
-  music.play();
+
+document.querySelector("#l-button").addEventListener("click", function () {
+  playMusic("tink");
 });
+function logKey(e) {
+  let soundArray = [
+    "clap",
+    "hihat",
+    "kick",
+    "openhat",
+    "boom",
+    "ride",
+    "snare",
+    "tom",
+    "tink",
+  ];
+  let keysArray = ["a", "s", "d", "f", "g", "h", "j", "k", "l"];
+  let chosenSound = soundArray[keysArray.indexOf(e.key)];
+  playMusic(chosenSound);
+}
+function playMusic(chosenSound) {
+  let music = new Audio(`sounds/${chosenSound}.wav`);
+  music.play();
+}
+document.onkeydown = logKey;
