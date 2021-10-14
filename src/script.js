@@ -3,7 +3,7 @@ document.querySelectorAll("button").forEach(function (button) {
     button.classList.add("active-button");
     setTimeout(function () {
       button.classList.remove("active-button");
-    }, 50);
+    }, 70);
   });
 });
 document.querySelector("#a-button").addEventListener("click", function () {
