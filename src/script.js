@@ -31,7 +31,6 @@ document.querySelector("#j-button").addEventListener("click", function () {
 document.querySelector("#k-button").addEventListener("click", function () {
   playMusic("tom");
 });
-
 document.querySelector("#l-button").addEventListener("click", function () {
   playMusic("tink");
 });
@@ -48,11 +47,21 @@ function logKey(e) {
     "tink",
   ];
   let keysArray = ["a", "s", "d", "f", "g", "h", "j", "k", "l"];
-  let chosenSound = soundArray[keysArray.indexOf(e.key)];
+  let keyLogged = e.key;
+  let chosenSound = soundArray[keysArray.indexOf(keyLogged)];
+  changeButton(keyLogged);
   playMusic(chosenSound);
 }
 function playMusic(chosenSound) {
   let music = new Audio(`sounds/${chosenSound}.wav`);
   music.play();
+}
+
+function changeButton(keyLogged) {
+  let button = document.querySelector(`#${keyLogged}-button`);
+  button.classList.add("active-button");
+  setTimeout(function () {
+    button.classList.remove("active-button");
+  }, 70);
 }
 document.onkeydown = logKey;
