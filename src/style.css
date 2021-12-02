@@ -1,24 +1,42 @@
+:root {
+  --primary-font: "Courier Prime", monospace;
+  --primary-color: #b69f43;
+}
+
 body {
   background-image: url("image/background.jpg");
   background-size: cover;
 }
+.instructions {
+  background-color: whitesmoke;
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  font-family: var(--primary-font);
+  font-size: 16px;
+  font-weight: bold;
+  margin: 80px auto 0 auto;
+  max-width: 400px;
+  padding: 15px;
+  text-align: center;
+}
+
 .drums {
-  margin-top: 650px;
+  margin-top: 580px;
   text-align: center;
 }
 button {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.8);
   border: solid 4px black;
   color: white;
-  font-family: "Courier Prime", monospace;
+  font-family: var(--primary-font);
   font-size: 30px;
   height: 80px;
-  margin: 10px 8px 0px 8px;
+  margin: 10px 8px 0;
   padding-top: 5px;
   width: 100px;
 }
 .sound {
-  color: #b69f43;
+  color: var(--primary-color);
   font-size: 15px;
 }
 .active-button {
@@ -30,4 +48,13 @@ button {
   height: 95px;
   margin: 0 3px 0 3px;
   width: 110px;
+}
+.credits {
+  font-size: 12px;
+  padding-top: 10px;
+  font-weight: normal;
+}
+
+.creedits a {
+  color: var(--primary-color);
 }
